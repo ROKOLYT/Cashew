@@ -1,1 +1,0 @@
-/home/jassz/Cashew/budget/build/app/intermediates/cxx/RelWithDebInfo/6ou333q6/obj/armeabi-v7a
