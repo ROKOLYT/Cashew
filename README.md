@@ -1,7 +1,7 @@
 
 <h1 align="center" style="font-size:28px; line-height:1"><b>Cashew</b></h1>
 <h2 align="center">SDK 35, JDK 17, Gradle 8.1, Kotlin 2.0.20</h2>
-<h2 align="center">buildable command below, premium unlocked</h2>
+<h2 align="center">premium unlocked</h2>
 
 Run the following command to generate a key for signing the app:
 
