@@ -1,5 +1,6 @@
 <h1 align="center" style="font-size:28px; line-height:1"><b>Cashew</b></h1>
-
+<h2 align="center">SDK 35, JDK 17, Gradle 8.1, Kotlin 2.0.20</h2>
+<h2 align="center">buildable command below, premium unlocked</h2>
 <a href="https://cashewapp.web.app/">
   <div align="center">
     <img alt="Icon" src="promotional/icons/icon.png" width="150px">

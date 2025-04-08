@@ -42,6 +42,7 @@ Map<String, String> productIDs = {
       : 'cashew.pro.lifetime', //Android
 };
 
+
 // A user has paid is appStateSettings["purchaseID"] is not null
 
 class PremiumPage extends StatelessWidget {
@@ -242,7 +243,7 @@ class PremiumPage extends StatelessWidget {
     );
     bool enableSubscriptionAboutBanner =
         (getPlatform(ignoreEmulation: true) == PlatformOS.isAndroid &&
-            appStateSettings["purchaseID"] != productIDs["lifetime"]);
+            productIDs["lifetime"] != productIDs["lifetime"]); // Replaced check
     return Column(
       children: [
         Expanded(
@@ -477,8 +478,8 @@ class TextPill extends StatelessWidget {
 }
 
 openManagePurchase() {
-  if (appStateSettings["purchaseID"] == productIDs["lifetime"]) {
-    return;
+  if (productIDs["lifetime"] == productIDs["lifetime"]) {
+    return; // Replaced Check
   } else if (getPlatform(ignoreEmulation: true) == PlatformOS.isIOS) {
     openUrl("https://apps.apple.com/account/subscriptions");
   } else if (appStateSettings["purchaseID"] == productIDs["monthly"]) {
@@ -499,8 +500,8 @@ class ManageSubscription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String? currentPlanName;
-    if (appStateSettings["purchaseID"] == productIDs["lifetime"]) {
-      currentPlanName = "lifetime".tr();
+    if (productIDs["lifetime"] == productIDs["lifetime"]) {
+      currentPlanName = "lifetime".tr(); // Replaced Check
     } else if (appStateSettings["purchaseID"] == productIDs["monthly"]) {
       currentPlanName = "monthly".tr().capitalizeFirst;
     } else if (appStateSettings["purchaseID"] == productIDs["yearly"]) {
@@ -521,7 +522,7 @@ class ManageSubscription extends StatelessWidget {
         padding: EdgeInsetsDirectional.symmetric(horizontal: 35, vertical: 15),
         child: Column(
           children: [
-            appStateSettings["purchaseID"] == productIDs["lifetime"]
+            productIDs["lifetime"] == productIDs["lifetime"] // Replaced Check
                 ? TextFont(
                     text: "already-purchased".tr(),
                     fontSize: 16,
@@ -538,7 +539,7 @@ class ManageSubscription extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             SizedBox(height: 10),
-            appStateSettings["purchaseID"] == productIDs["lifetime"]
+            productIDs["lifetime"] == productIDs["lifetime"] // Replaced Check
                 ? SizedBox.shrink()
                 : Padding(
                     padding: EdgeInsetsDirectional.symmetric(
@@ -715,9 +716,11 @@ showHelpRestorePopup(BuildContext context) {
 }
 
 bool hidePremiumPopup() {
-  return premiumPopupEnabled == false ||
-      appStateSettings["purchaseID"] != null ||
-      appStateSettings["previewDemo"] == true;
+  return true;
+  // return premiumPopupEnabled == false ||
+  //     appStateSettings["purchaseID"] != null ||
+  //     appStateSettings["previewDemo"] == true;
+  // Replaced Check
 }
 
 Future<bool> premiumPopupPushRoute(BuildContext context) async {
@@ -862,7 +865,9 @@ class ProductsState extends State<Products> {
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
       duration: Duration(milliseconds: 700),
-      child: appStateSettings["purchaseID"] != null
+      // child: appStateSettings["purchaseID"] != null
+      // Replaced Check
+      child: true
           ? ManageSubscription()
           : kIsWeb || hasProducts == false
               ? loading == true
@@ -1404,7 +1409,9 @@ class PremiumBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     if (kIsWeb) return SizedBox.shrink();
     double borderRadius = 15;
-    bool purchased = appStateSettings["purchaseID"] != null;
+    bool purchased = true;
+    // bool purchased = appStateSettings["purchaseID"] != null;
+    // Replaced Check
 
     return Container(
       decoration: BoxDecoration(
@@ -1517,7 +1524,9 @@ class PremiumBanner extends StatelessWidget {
                               ],
                             ),
                           ),
-                          appStateSettings["purchaseID"] != null
+                          // appStateSettings["purchaseID"] != null
+                          // Replaced Check
+                          true
                               ? SizedBox.shrink()
                               : Icon(
                                   appStateSettings["outlinedIcons"]

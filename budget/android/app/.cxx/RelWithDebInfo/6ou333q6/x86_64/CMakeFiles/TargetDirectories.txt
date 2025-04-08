@@ -1,0 +1,2 @@
+/home/jassz/Cashew/budget/android/app/.cxx/RelWithDebInfo/6ou333q6/x86_64/CMakeFiles/edit_cache.dir
+/home/jassz/Cashew/budget/android/app/.cxx/RelWithDebInfo/6ou333q6/x86_64/CMakeFiles/rebuild_cache.dir
