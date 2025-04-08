@@ -8,6 +8,15 @@ Run the following command to generate a key for signing the app:
 ```bash
 keytool -genkey -v -keystore ~/my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key-alias
 ```
+Create a file key.properties in the budget directory:
+
+```properties
+storePassword=PASSWORD
+keyPassword=PASSWORD
+keyAlias=my-key-alias
+storeFile=/home/USERNAME/Cashew/budget/my-release-key.jks
+```
+
 Build the app:
 
 ```bash
