@@ -1,6 +1,26 @@
+
 <h1 align="center" style="font-size:28px; line-height:1"><b>Cashew</b></h1>
 <h2 align="center">SDK 35, JDK 17, Gradle 8.1, Kotlin 2.0.20</h2>
 <h2 align="center">buildable command below, premium unlocked</h2>
+
+Run the following command to generate a key for signing the app:
+
+```bash
+keytool -genkey -v -keystore ~/my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key-alias
+```
+Build the app:
+
+```bash
+flutter build appbundle --release
+```
+
+Then run the following to unpack the app bundle:
+
+```bash
+bundletool build-apks   --bundle=~/Cashew/budget/build/app/outputs/bundle/release/app-release.aab   --output=~/Cashew/budget/build/app/outputs/bundle/release/my_app.apks   --ks=~/Cashew/budget/my-release-key.jks   --ks-key-alias=my-key-alias   --ks-pass=pass:PASSWORD  --key-pass=pass:PASSWORD --mode=universal
+```
+
+<p>
 <a href="https://cashewapp.web.app/">
   <div align="center">
     <img alt="Icon" src="promotional/icons/icon.png" width="150px">
@@ -23,6 +43,8 @@
     <img alt="PWA Badge" src="promotional/store-banners/pwa-badge.png" height="60px">
   </a>
 </div>
+
+<br />
 
 <br />
 
